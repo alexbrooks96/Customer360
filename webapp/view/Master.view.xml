@@ -4,8 +4,9 @@
 		<pages>
 			<Page title="Title">
 				<content>
-					
-					<Text text="This is the master view"/> 
+					<List id="customerList" items="{customersModel>/customers}">
+						<ObjectListItem title= "{customersModel>name}"/>
+					</List>
 				</content>
 			</Page>
 		</pages>
