@@ -39,7 +39,10 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_hcb", "sap_belize"]
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -73,9 +76,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -85,11 +90,28 @@
 				"viewPath": "com.delaware.ab.trac20182018.view",
 				"controlId": "idAppControl"
 			},
-			"routes": [
-			
-			],
+			"routes": [],
 			"targets": {
-				
+				"Master": {
+					"viewType": "XML",
+					"viewName": "Master",
+					"routerClass": "sap.f.routing.Router",
+					"async": true,
+					"viewPath": "com.delaware.ab.trac20182018.view",
+					"controlId": "idAppControl"
+				},
+				"Data": {
+					"viewType": "XML",
+					"viewName": "Data",
+					"routerClass": "sap.f.routing.Router",
+					"async": true,
+					"viewPath": "com.delaware.ab.trac20182018.view",
+					"controlId": "idAppControl"
+				},
+				"Detail": {
+					"viewType": "XML",
+					"viewName": "Detail"
+				}
 			}
 		}
 	}
