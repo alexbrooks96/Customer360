@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (BaseController) {
 	"use strict";
 
-	return BaseController.extend("com.delaware.ab.trac20182018.controller.App", {
+	return BaseController.extend("com.delaware.ab.trac2018.controller.App", {
 		onInit: function(){
 			this.getModel("appView").setProperty("/layout", "OneColumn");
 		}

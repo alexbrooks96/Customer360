@@ -3,7 +3,10 @@
 	<App>
 		<pages>
 			<Page title="Title">
-				<content></content>
+				<content>
+					
+					<Text text="This is the master view"/> 
+				</content>
 			</Page>
 		</pages>
 	</App>

@@ -1,7 +1,7 @@
 {
 	"_version": "1.8.0",
 	"sap.app": {
-		"id": "com.delaware.ab.trac20182018",
+		"id": "com.delaware.ab.trac2018",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -46,7 +46,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "com.delaware.ab.trac20182018.view.App",
+			"viewName": "com.delaware.ab.trac2018.view.App",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -87,17 +87,22 @@
 				"routerClass": "sap.f.routing.Router",
 				"viewType": "XML",
 				"async": true,
-				"viewPath": "com.delaware.ab.trac20182018.view",
-				"controlId": "idAppControl"
+				"viewPath": "com.delaware.ab.trac2018.view",
+				"controlId": "idAppControl",
+				"controlAggregation": "beginColumnPages"
 			},
-			"routes": [],
+			"routes": [{
+				"name": "Master",
+				"pattern": "",
+				"target":"Master"
+			}],
 			"targets": {
 				"Master": {
 					"viewType": "XML",
 					"viewName": "Master",
 					"routerClass": "sap.f.routing.Router",
 					"async": true,
-					"viewPath": "com.delaware.ab.trac20182018.view",
+					"viewPath": "com.delaware.ab.trac2018.view",
 					"controlId": "idAppControl"
 				},
 				"Data": {
@@ -105,7 +110,7 @@
 					"viewName": "Data",
 					"routerClass": "sap.f.routing.Router",
 					"async": true,
-					"viewPath": "com.delaware.ab.trac20182018.view",
+					"viewPath": "com.delaware.ab.trac2018.view",
 					"controlId": "idAppControl"
 				},
 				"Detail": {

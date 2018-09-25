@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.delaware.ab.trac20182018.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="com.delaware.ab.trac2018.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true" xmlns="sap.f" xmlns:m="sap.m">
 	<m:App>
 		<FlexibleColumnLayout id="idAppControl" layout="{appView>/layout}"></FlexibleColumnLayout>
