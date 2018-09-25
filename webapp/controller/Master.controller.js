@@ -35,6 +35,7 @@ sap.ui.define([
 		
 			oModel.read("/ZV_ZVT18_CUSTM_JVN", {
 			success: function(oData){
+				console.log(oData);
 				that.getView().getModel("customersModel").setData({
 					"customers": oData.results
 				});

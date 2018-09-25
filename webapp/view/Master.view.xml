@@ -2,10 +2,18 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title="Title">
+			<Page title="Customers Table">
 				<content>
 					<List id="customerList" items="{customersModel>/customers}">
-						<ObjectListItem title= "{customersModel>name}"/>
+						<ObjectListItem title= "{customersModel>name}">
+				<attributes>
+					<ObjectAttribute text="{customersModel>city}" />
+					<ObjectAttribute text="{customersModel>countrykey}" />
+				</attributes>
+				
+				</ObjectListItem>
+						
+						
 					</List>
 				</content>
 			</Page>
