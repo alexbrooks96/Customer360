@@ -5,10 +5,14 @@
 			<Page title="Customers Table">
 				<content>
 					<List id="customerList" items="{customersModel>/customers}">
-						<ObjectListItem title= "{customersModel>name}">
+						<ObjectListItem 
+						title= "{customersModel>name}"
+						type="Navigation"
+						press="onCustomerPress">
 				<attributes>
-					<ObjectAttribute text="{customersModel>city}" />
-					<ObjectAttribute text="{customersModel>countrykey}" />
+					<ObjectAttribute title="{i18n>Master.List.CustomerNumber}" text="{path: 'customersModel>CustomerNumber', formatter: '.formatter.addLeadingZeroes'}" />
+					<ObjectAttribute title="{i18n>Master.List.City}" text="{customersModel>city}" />
+					<ObjectAttribute title="{i18n>Master.List.Country}" text="{customersModel>country}" />
 				</attributes>
 				
 				</ObjectListItem>

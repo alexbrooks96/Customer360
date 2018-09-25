@@ -29,6 +29,14 @@
 					"odataVersion": "2.0",
 					"localUri": "localService/ZV_ZVT18_CUSTM_JVN_CDS/metadata.xml"
 				}
+			},
+			"ZV_ZVT18_ORDERS_JVN_CDS": {
+				"uri": "/sap/opu/odata/sap/ZV_ZVT18_ORDERS_JVN_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZV_ZVT18_ORDERS_JVN_CDS/metadata.xml"
+				}
 			}
 		}
 	},
@@ -47,7 +55,10 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_hcb", "sap_belize"]
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -94,12 +105,30 @@
 				"type": "sap.ui.model.json.JSONModel",
 				"settings": {},
 				"preload": false
+			},
+			"ordersModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false
+			},
+			"orderModel": {
+				"uri": "/sap/opu/odata/sap/ZV_ZVT18_ORDERS_JVN_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZV_ZVT18_ORDERS_JVN_CDS",
+				"preload": true
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -110,11 +139,21 @@
 				"controlId": "idAppControl",
 				"controlAggregation": "beginColumnPages"
 			},
-			"routes": [{
-				"name": "Master",
-				"pattern": "",
-				"target": "Master"
-			}],
+			"routes": [
+				{
+					"name": "Master",
+					"pattern": "",
+					"target": "Master"
+				},
+				{
+					"name": "Detail",
+					"pattern": "customer/{customerNumber}",
+					"target": [
+						"Master",
+						"Detail"
+					]
+				}
+			],
 			"targets": {
 				"Master": {
 					"viewType": "XML",
@@ -134,7 +173,8 @@
 				},
 				"Detail": {
 					"viewType": "XML",
-					"viewName": "Detail"
+					"viewName": "Detail",
+					"controlAggregation": "midColumnPages"
 				}
 			}
 		}

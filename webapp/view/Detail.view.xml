@@ -2,8 +2,19 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title="Title">
-				<content></content>
+			<Page title="Customer Sales Orders">
+				<content>
+					
+					<List id="ordersList" items="{ordersModel>/orders}">
+						<ObjectListItem title="{ordersModel>OrderNumber}" >
+							<attributes>
+								<ObjectAttribute title="ID" text="{ordersModel>Id}"/>
+								<ObjectAttribute title="Delivery Date" text="{ordersModel>RequestedDeliveryDate}"/>
+								<ObjectAttribute title="Net Value" text="{ordersModel>NetValue}"/>
+							</attributes>
+						</ObjectListItem>
+					</List>
+				</content>
 			</Page>
 		</pages>
 	</App>
