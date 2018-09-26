@@ -4,16 +4,65 @@
 		<pages>
 			<Page title="Customer Sales Orders">
 				<content>
+					<!--<f:SimpleForm title="{i18n>Common.Customer}" editable="true">
+						<f:content>
+							<Label text="{i18n>Common.Customer}"/>
+							<ComboBox items="{customersModel>/ZV_ZVT18_CUSTM_JVN}" change="onCustomerComboBoxChange">
+								<core:ListItem key="{customersModel>CustomerNumber}" text="{customersModel>name}"/>
+							</ComboBox>
+						</f:content>
+					</f:SimpleForm>
+					<f:SimpleForm title="{i18n>Common.Item}" editable="true">
+						<f:content>
+							<Label text="{i18n>Common.Material}"/>
+							<ComboBox items="{/MaterialSet}" change="onMaterialComboBoxChange">
+								<core:ListItem key="{MaterialNumber}" text="{MaterialDescription}"/>
+							</ComboBox>
+							<Label text="{i18n>Common.Quantity}"/>
+							<StepInput min="0" value="{itemModel>/Quantity}"/>
+							<Label/>
+							<Button press="onAddItemButtonPress" text="{i18n>Page.Form.Button.AddItem}"/>
+						</f:content>
+					</f:SimpleForm>-->
 					
-					<List id="ordersList" items="{ordersModel>/orders}">
-						<ObjectListItem title="{ordersModel>OrderNumber}" >
+					
+					
+					
+					<Table items="{ordersModel>/orders}" id="idItemsTable">
+						<columns>
+							<Column>
+								<Text text="Order Number"/>
+							</Column>
+							<Column>
+								<Text text="ID"/>
+							</Column>
+							<Column>
+								<Text text="Req. Delivery Date"/>
+							</Column>
+							<Column>
+								<Text text="Net Value"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectIdentifier title="{ordersModel>OrderNumber}"/>
+									<Text text="{ordersModel>Id}"/>
+									<Text text="{ordersModel>RequestedDeliveryDate}"/>
+									<Text text="{ordersModel>NetValue}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<!--<List id="ordersList" items="{ordersModel>/orders}">
+						<ObjectListItem title="{ordersModel>OrderNumber}">
 							<attributes>
 								<ObjectAttribute title="ID" text="{ordersModel>Id}"/>
 								<ObjectAttribute title="Delivery Date" text="{ordersModel>RequestedDeliveryDate}"/>
 								<ObjectAttribute title="Net Value" text="{ordersModel>NetValue}"/>
 							</attributes>
 						</ObjectListItem>
-					</List>
+					</List>-->
 				</content>
 			</Page>
 		</pages>
